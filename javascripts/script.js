@@ -17,6 +17,11 @@ $(document).ready(function(){
       }
     }
     $(this).before("<pre class='lines'>" + lines.join("\n") + "</pre>");
+    var underlined = $('*').filter(function() {
+    return $(this).css("text-decoration") === 'underline';
+    });
+    underlined.css("text-decoration", "none");
+    underlined.addClass("nice-underline");
   });
 
   var headings = [];
