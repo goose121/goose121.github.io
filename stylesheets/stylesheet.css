@@ -442,8 +442,10 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   color: #90D355;
+  text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #90D355 1px, #90D355 2px, rgba(0, 0, 0, 0) 2px);
 }
 
 h1.title {
@@ -575,6 +577,11 @@ p.tagline {
   color: #63a52a;
 }
 
+.nice_underline {
+  text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 2px, #63a52a 2px, #63a52a 3px, rgba(0, 0, 0, 0) 3px);
+}
+
 .current-section {
   position: fixed;
   top: 0;
@@ -596,19 +603,6 @@ p.tagline {
   font-weight: bold;
 }
 
-.nice-underline{
-  text-decoration: none
-  position: relative
-  @if $breaking-underlines
-    text-shadow: -1px -1px 0 $background-color, 1px -1px 0 $background-color, -1px 1px 0 $background-color, 1px 1px 0 $background-color
-  +underline($link-color)
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
-    +underline($link-color, 0.5)
-  &:hover, &:focus
-    +underline($link-color-active)
-    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
-      +underline($link-color-active, 0.5)
-}
 .current-section a {
   float: right;
   text-indent: -10000px;
